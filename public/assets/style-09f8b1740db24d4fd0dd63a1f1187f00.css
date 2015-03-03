@@ -2,6 +2,7 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -61,13 +62,13 @@ body {
 }
 
 #left .wrap {
-	padding: 40% 0% 0% 20%;
+	padding: 40% 20% 0% 20%;
 }
 
 #left h1 {
 	color: #E22228;
-	font-size: 78px;
-	font-weight: 400;
+	font-size: 90px;
+	font-weight: 300;
 	margin-bottom: 50px;
 }
 
@@ -80,7 +81,7 @@ body {
 
 #left h3 {
 	color: black;
-	font-size: 35px;
+	font-size: 60px;
 	font-weight: 300;
 	margin-bottom: 50px;
 }
