@@ -2,6 +2,7 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,26 +42,57 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-body { font-family: 'Open Sans', sans-serif;}
+body {
+	font-family: 'Open Sans', sans-serif;
+}
 
-.wrap {margin: 0 auto;}
+.wrap {
+/*	width: 1200px;*/
+	margin: 0 auto;
+}
 
-.wrap img { float: right;}
+#left {
+	float: left;
+	width: 50%
+}
 
-#left {float: left; width: 50%}
+#left .wrap {
+	padding: 40% 0% 0% 20%;
+}
 
-#left .wrap {padding: 40% 0% 0% 20%;}
+#left .boom {
+	padding: 0% 0% 0% 10%;
+}
 
-#left .boom {padding: 10px 0px 0px 80px;}
 
-#left h1 { color: #E22228; font-size: 78px; font-weight: 400; margin-bottom: 50px;}
 
-#left h1.boom{text-align: left; margin: 10%;}
+#left h1 {
+	color: #E22228;
+	font-size: 78px;
+	font-weight: 400;
+	margin-bottom: 50px;
+}
 
-#left h2 { color: #303030; font-size: 30px; font-weight: 300; margin-bottom: 50px;}
+#left h1.boom{text-align: center;}
 
-#left h3 { color: black; font-size: 35px; font-weight: 300; margin-bottom:  }
+#left h2 {
+	color: #303030;
+	font-size: 30px;
+	font-weight: 300;
+	margin-bottom: 50px;
+}
+
+#left h3 {
+	color: black;
+	font-size: 35px;
+	font-weight: 300;
+	margin-bottom: 50px;
+}
 
 #left input.textfield {
     border: 0;
@@ -73,8 +105,24 @@ body { font-family: 'Open Sans', sans-serif;}
     font-size: 18px;
 }
 
-#left input.user{background-image: url(user_icon.png);background-repeat: no-repeat;background-position: right top;}
+#left input.user{
+    background-image: url(user_icon.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
 
-#left input.password{background-image: url(password_icon.png); background-repeat: no-repeat; background-position: right }
+#left input.password{
+    background-image: url(password_icon.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
 
-#right{float: right; background-color: #e22228; width: 50%;}
+#right {
+	float: right;
+	background-color: #e22228;
+	width: 50%
+}
+
+.wrap img {
+	float: right;
+}

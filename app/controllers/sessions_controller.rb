@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
   def new_auth
   end
 
+  def boom
+  end
+
 def create
   user = User.authenticate(params[:username], params[:password])
   if user
