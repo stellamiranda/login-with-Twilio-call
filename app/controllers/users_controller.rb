@@ -12,10 +12,10 @@ class UsersController < ApplicationController
         user = User.find(params[:id].to_i)
         response = Twilio::TwiML::Response.new do |r|
             r.Say 'Hello ' + user.username + ' your code is ', :voice => 'alice'
-            r.Pause :length => 3
+            r.Pause :length => 1
             user.code.to_s.split('').each do |digit|
                 r.Say digit, :voice => 'alice'
-                r.Pause :length => 1   
+                r.Pause :length => 0.5   
             end
         end
         render_twiml response
