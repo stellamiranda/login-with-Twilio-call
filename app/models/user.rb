@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
         @client = Twilio::REST::Client.new account_sid, auth_token 
      
         @client.account.calls.create({
-            :url => 'http://magic-login.herokuapp.com/twilio/text_response/'+self.id.to_s ,
+            :url => 'http://magic-login.herokuapp.com/users/'+self.id.to_s+'/text_response/' ,
             :to => self.celphone,
             :from => '+16504828142'  
         })
