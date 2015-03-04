@@ -3,9 +3,9 @@
 		<h2>
 			Ahoy hoy!
 		</h2>
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
+		<% flash.each do |name, msg| %>
+  			<%= content_tag :div, msg, :id => "flash_#{name}" %>	
+		<% end %>
 		<div id="login">
 			<%= form_tag sessions_path do %>
 			    <%= text_field_tag :username, params[:username], class: 'textfield user', placeholder: "Username" %> 
@@ -23,10 +23,10 @@
 </div>
 
 <script type="text/javascript">
-$("input").keypress(function(event) {
-    if (event.which == 13) {
-        event.preventDefault();
-        $("form").submit();
-    }
-});
+	$("input").keypress(function(event) {
+    	if (event.which == 13) {
+        	event.preventDefault();
+        	$("form").submit();
+    	}
+	});
 </script>

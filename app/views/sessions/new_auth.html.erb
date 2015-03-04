@@ -1,7 +1,12 @@
 <div id="left">
 	<div class="wrap">
-		<h3>Your code is:</h3>
-		<h1>829527</h1>
+		<h3>Enter your code</h3>
+		<div id="login">
+			<%= form_tag sessions_path do %>
+			    <%= text_field_tag :code, params[:code], class: 'textfield code' %> 
+			<% end %>
+		</div>
+
 		</div>
 	</div>
 </div>
@@ -11,3 +16,12 @@
 		<%= image_tag "background_img3.png" %>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$("input").keypress(function(event) {
+    	if (event.which == 13) {
+        	event.preventDefault();
+        	$("form").submit();
+    	}
+	});
+</script>

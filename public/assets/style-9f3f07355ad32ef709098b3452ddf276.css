@@ -2,6 +2,7 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -68,6 +69,7 @@ body { font-family: 'Open Sans', sans-serif;}
 
 #left input.password{background-image: url(password_icon.png); background-repeat: no-repeat; background-position: right;}
 
-#left input.code{color: #E22228; font-size: 78px; font-weight: 400; }
+#left input.code{background-image: url(password_icon.png); background-repeat: no-repeat; background-position: right;
+color: #E22228; font-size: 78px; font-weight: 400; }
 
 #right{float: right; background-color: #e22228; width: 50%;}

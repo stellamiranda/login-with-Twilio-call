@@ -11,12 +11,8 @@ Rails.application.routes.draw do
 	get 'twilio/text_response' => 'twilio#text_response'
 	post 'twilio/voice2' => 'twilio#voice2'
 
-
 	root :to => "sessions#new"
 	resources :users
 	resources :sessions 
 
-	#Twilio
-
-	
 end

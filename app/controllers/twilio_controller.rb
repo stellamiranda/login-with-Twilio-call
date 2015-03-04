@@ -7,7 +7,6 @@ class TwilioController < ApplicationController
     after_filter :set_header
  
     skip_before_action :verify_authenticity_token
-    # put your own credentials here 
 
     def voice
         account_sid = 'AC3b1f7f5063c36b58df1184eeee14bed4' 
