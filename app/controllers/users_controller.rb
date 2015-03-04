@@ -7,21 +7,6 @@ class UsersController < ApplicationController
     after_filter :set_header
  
     skip_before_action :verify_authenticity_token
-  
-    def new
-        response.headers["Content-Type"] = "application/html"
-        @user = User.new
-        render "new"
-    end
-  
-    def create
-        @user = User.new(user_params)
-        if @user.save
-            redirect_to root_url, :notice => "Signed up!"
-        else
-            render "new"
-        end
-    end
 
     def text_response
         user = User.find(params[:id])

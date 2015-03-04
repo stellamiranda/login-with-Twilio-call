@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         if user
             session[:user_id] = user.id
             user.generate_code
-            user.voice
+            #user.voice
             redirect_to new_auth_path
         else
             flash.now.alert = "Invalid username or password"
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         user = User.find(session[:user_id])
         if user
             if user.code.to_s == params[:code]
-                redirect_to boom_path, :notice => "Logged in!"
+                redirect_to boom_path#, :notice => "Logged in!"
             else
                 flash.now.alert = "Invalid Code"
                 render "new_auth"
