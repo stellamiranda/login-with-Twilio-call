@@ -6,10 +6,8 @@
     <% end %>
     <div id="login">
       <%= form_tag(controller: "admins", action: "create", method: "post") do %>       
-        <%= text_field :user, :name, class: "textfield", placeholder: "name"  %>
         <%= text_field :user, :username, class: "textfield", placeholder: "username"  %>
         <%= text_field :user, :celphone, class: "textfield", placeholder: "cellphone"  %>
-        <%= email_field :user, :email, class: "textfield", placeholder: "email"  %>
         <%= password_field :user, :password, class: "textfield", placeholder: "password"  %>
       <% end %>
     </div>
