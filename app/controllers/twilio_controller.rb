@@ -15,12 +15,13 @@ class TwilioController < ApplicationController
         @client = Twilio::REST::Client.new account_sid, auth_token 
      
         @client.account.calls.create({
-            :url => 'https://magic-login.herokuapp.com/twilio/voice2' ,
+            :url => 'http://magic-login.herokuapp.com/twilio/voice2' ,
             :to => "+14158406242",
             :from => '+16504828142'  
         })
         render nothing: true
-    end
+
+    end 
 
     def text_response
         Twilio::TwiML::Response.new do |r|
