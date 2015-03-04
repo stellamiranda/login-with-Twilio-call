@@ -35,20 +35,16 @@ class User < ActiveRecord::Base
         auth_token = 'e3a6b88c86ad73da59d08a58817a2f0c' 
         @client = Twilio::REST::Client.new account_sid, auth_token 
      
-#        @client.account.calls.create({
-#            :url => 'http://magic-login.herokuapp.com/twilio/text_response/'+self.id.to_s ,
-#            :to => self.celphone,
-#            :from => '+16504828142'  
-#        })
+        @client.account.calls.create({
+            :url => 'http://magic-login.herokuapp.com/twilio/text_response/'+self.id.to_s ,
+            :to => self.celphone,
+            :from => '+16504828142'  
+        })
         
 
         # sms 
     
-        @client.account.messages.create({
-            :body => "Your Code is" + self.code.to_s,
-            :to => "+573005787275",
-            :from => '+16504828142'  
-        })
+        #@client.account.messages.create({ :body => "Your Code is" + self.code.to_s,:to => "+573005787275", :from => '+16504828142'  })
 
     end
   
