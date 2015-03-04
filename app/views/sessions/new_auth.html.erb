@@ -1,8 +1,11 @@
 <div id="left">
 	<div class="wrap">
 		<h3>Enter your code</h3>
+		<% flash.each do |name, msg| %>
+  			<%= content_tag :div, msg, :id => "flash_#{name}" %>	
+		<% end %>
 		<div id="login">
-			<%= form_tag sessions_path do %>
+			<%= form_tag create_session_sessions_path do %>
 			    <%= text_field_tag :code, params[:code], class: 'textfield code' %> 
 			<% end %>
 		</div>

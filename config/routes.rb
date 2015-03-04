@@ -8,11 +8,15 @@ Rails.application.routes.draw do
 
 	post 'twilio/voice' => 'twilio#voice'
 	post 'twilio/sms' => 'twilio#sms'
-	get 'twilio/text_response' => 'twilio#text_response'
-	post 'twilio/voice2' => 'twilio#voice2'
-
+	post 'twilio/text_response/:id' => 'twilio#text_response'
+	#post 'sessions/create_session' => 'sessions#create_session ', :as => "create_session"
 	root :to => "sessions#new"
-	resources :users
-	resources :sessions 
+	resources :users do
+		post 'voice', :on => :member
+		post 'text_response', :on => :member
+	end
+	resources :sessions do
+		 post 'create_session', :on => :collection
 
+	end
 end
