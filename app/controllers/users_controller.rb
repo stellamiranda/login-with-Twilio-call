@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     skip_before_action :verify_authenticity_token
   
     def new
+        response.headers["Content-Type"] = "application/html"
         @user = User.new
+        render "new"
     end
   
     def create

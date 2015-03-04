@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 	get "log_in" => "sessions#new", :as => "log_in"
 	get "new_auth" => "sessions#new_auth", :as => "new_auth"
 	get "boom" => "sessions#boom", :as => "boom"
-	get "sign_up" => "users#new", :as => "sign_up"
+	get "sign_up" => "admins#new", :as => "sign_up"
+	post "admins_path" => "admins#create"
 
 	root :to => "sessions#new"
 	resources :users do

@@ -1,39 +1,34 @@
-<h1>Sign Up</h1>
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div id="left">
+  <div class="wrap">
+    <h2>
+      Sign Up!
+    </h2>
+    <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>  
+    <% end %>
+    <div id="login">
+      <%= form_tag(controller: "admins", action: "create", method: "post") do %>       
+        <%= text_field :user, :name, class: "textfield", placeholder: "name"  %>
+        <%= text_field :user, :username, class: "textfield", placeholder: "username"  %>
+        <%= text_field :user, :celphone, class: "textfield", placeholder: "celphone"  %>
+        <%= email_field :user, :email, class: "textfield", placeholder: "email"  %>
+        <%= password_field :user, :password, class: "textfield", placeholder: "password"  %>
+      <% end %>
     </div>
-  <% end %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :celphone %><br />
-    <%= f.text_field :celphone %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
-<% end %>
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="right">
+    <%= image_tag "background_img4.png" %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("input").keypress(function(event) {
+      if (event.which == 13) {
+          event.preventDefault();
+          $("form").submit();
+      }
+  });
+</script>
