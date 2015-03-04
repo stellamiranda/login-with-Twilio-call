@@ -1,12 +1,12 @@
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: utf8
-  database: login_development
+  database: db/development.sqlite3
 
 test:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: utf8
-  database: login_test
+  database: db/test.sqlite3
 
 production:
   adapter: postgresql

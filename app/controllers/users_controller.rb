@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             r.Pause :length => 1
             user.code.to_s.split('').each do |digit|
                 r.Say digit, :voice => 'alice'
-                #r.Pause :length => 0.5   
+                r.Pause :length => 0.5   
             end
         end
         render_twiml response
