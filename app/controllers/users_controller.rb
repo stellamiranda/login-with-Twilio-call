@@ -29,15 +29,15 @@ class UsersController < ApplicationController
         render_twiml response
     end
 
-    def spell_number(number)
+  	private
+
+     def spell_number(number)
         spelled_number = ""
         number.to_s.split('').each do |number|
             spelled_number = spelled_number + number +  ' '
         end
         return spelled_number
     end
-
-  	private
 
   	def user_params
   		params.require(:user).permit(:name, :username, :celphone, :email, :password)

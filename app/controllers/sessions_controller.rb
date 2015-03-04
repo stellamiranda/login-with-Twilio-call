@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     end
 
     def new_auth
-        puts session[:user_id]
     end
 
     def boom
