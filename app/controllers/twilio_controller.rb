@@ -2,12 +2,12 @@ require 'twilio-ruby'
  
 class TwilioController < ApplicationController
 
- include Webhookable
+    include Webhookable
  
-  after_filter :set_header
+    after_filter :set_header
  
-  skip_before_action :verify_authenticity_token
- # put your own credentials here 
+    skip_before_action :verify_authenticity_token
+    # put your own credentials here 
 
     def voice
         account_sid = 'AC3b1f7f5063c36b58df1184eeee14bed4' 
@@ -19,13 +19,13 @@ class TwilioController < ApplicationController
             :to => "+14158406242",
             :from => '+16504828142'  
         })
+        render nothing: true
     end
 
     def text_response
         Twilio::TwiML::Response.new do |r|
             r.Say "your code is 1 2 3 4 5 6"
         end.text
-
     end
 
     def sms 
@@ -38,21 +38,19 @@ class TwilioController < ApplicationController
             :to => "+573005787275",
             :from => '+16504828142'  
         })
-
     end
 
-
-  def voice2
-    response = Twilio::TwiML::Response.new do |r|
-        r.Say 'r.Say "your code is 1 2 3 4 5 6 ', :voice => 'alice'
+    def voice2
+        response = Twilio::TwiML::Response.new do |r|
+            r.Say 'r.Say "your code is 1 2 3 4 5 6 ', :voice => 'alice'
+        end
+        render_twiml response
     end
-    render_twiml response
-  end
 
-def voice3
-  Twilio::TwiML::Response.new do |r|
-    r.Say 'Hello Monkey'
-  end.text
-end
+    def voice3
+        Twilio::TwiML::Response.new do |r|
+            r.Say 'Hello Monkey'
+        end.text
+    end
 
 end
