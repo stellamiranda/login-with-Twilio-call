@@ -60,11 +60,12 @@ body { font-family: 'Open Sans', sans-serif;}
 
 #left h2 { color: #303030; font-size: 30px; font-weight: 300; margin-bottom: 50px;}
 
-#left h3 { color: black; font-size: 35px; font-weight: 300; margin-bottom:  }
+#left h3 { color: black; font-size: 35px; font-weight: 300; margin-bottom: 50px; }
 
 #left input.textfield {
     border: 0;
     outline: 0;
+    color: #898989;
     background: transparent;
     border-bottom: 1px solid grey;
     width: 300px;

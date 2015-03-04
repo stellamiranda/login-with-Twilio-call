@@ -3,10 +3,12 @@
 		<h2>
 			Ahoy hoy!
 		</h2>
-
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
 		<div id="login">
 			<%= form_tag sessions_path do %>
-			    <%= text_field_tag :email, params[:email], class: 'textfield user', placeholder: "Username" %> 
+			    <%= text_field_tag :username, params[:username], class: 'textfield user', placeholder: "Username" %> 
 			    <%= password_field_tag :password , nil, class: 'textfield password' , placeholder: "Password" %> 
 			  <!--p class="button"><%#= submit_tag "Log in" %></p-->
 			<% end %>
