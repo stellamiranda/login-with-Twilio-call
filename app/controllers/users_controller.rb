@@ -24,20 +24,17 @@ class UsersController < ApplicationController
     def text_response
         user = User.find(params[:id])
         response = Twilio::TwiML::Response.new do |r|
-            r.Say 'Hello ' + user.name + ' your code is ' + spell_number(user.code), :voice => 'alice'
+            r.Say 'Hello ' + user.name + ' your code is ', :voice => 'alice'
+            r.Pause :length => 3
+            user.code.to_s.split('').each do |digit|
+                r.Say digit, :voice => 'alice'
+                r.Pause :length => 1   
+            end
         end
         render_twiml response
     end
 
   	private
-
-     def spell_number(number)
-        spelled_number = ""
-        number.to_s.split('').each do |number|
-            spelled_number = spelled_number + number +  ' '
-        end
-        return spelled_number
-    end
 
   	def user_params
   		params.require(:user).permit(:name, :username, :celphone, :email, :password)

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 	root :to => "sessions#new"
 	resources :users do
 		post 'voice', :on => :member
-		post 'text_response', :on => :member
+		get 'text_response', :on => :member
 	end
 	resources :sessions do
 		 post 'create_session', :on => :collection
