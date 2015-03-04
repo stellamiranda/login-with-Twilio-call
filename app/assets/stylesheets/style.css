@@ -71,3 +71,5 @@ body { font-family: 'Open Sans', sans-serif;}
 #left input.code{color: #E22228; font-size: 78px; font-weight: 400; }
 
 #right{float: right; background-color: #e22228; width: 50%;}
+
+#right img{width: 100%;}
