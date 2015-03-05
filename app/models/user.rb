@@ -32,8 +32,8 @@ class User < ActiveRecord::Base
     end
 
     def voice
-        account_sid = 'AC3b1f7f5063c36b58df1184eeee14bed4' 
-        auth_token = 'e3a6b88c86ad73da59d08a58817a2f0c' 
+        account_sid = ENV['TWILIO_ACCOUNT_SID'] 
+        auth_token = ENV['TWILIO_AUTH_TOKEN'] 
         @client = Twilio::REST::Client.new account_sid, auth_token 
      
         @client.account.calls.create({
